@@ -4,17 +4,13 @@ module PCReg #(
     input   logic [DATA_WIDTH-1:0]  next_PC,
     input   logic                   clk,
     input   logic                   rst,
-    output  logic [DATA_WIDTH-1:0]  Pci
+    output  logic [DATA_WIDTH-1:0]  PC
 );
-
-    logic [31:0] sreg;
 
     always_ff @ (posedge clk, posedge rst)
         if (rst)
-            sreg <= 32'0;
+            PC <= 32'b0;
         else
-            sreg <= next_PC;
-
-    assign Pci = sreg;
+            PC <= next_PC;
 
 endmodule

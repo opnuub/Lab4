@@ -6,6 +6,18 @@
 
 #include "Vtop___024root.h"
 
+VL_ATTR_COLD void Vtop___024root___settle__TOP__0(Vtop___024root* vlSelf) {
+    if (false && vlSelf) {}  // Prevent unused
+    Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___settle__TOP__0\n"); );
+    // Body
+    vlSelf->a0 = vlSelf->top__DOT__PC;
+    vlSelf->top__DOT__next_PC = ((IData)(vlSelf->PCsrc)
+                                  ? (vlSelf->top__DOT__PC 
+                                     + vlSelf->ImmOp)
+                                  : ((IData)(4U) + vlSelf->top__DOT__PC));
+}
+
 VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -15,14 +27,12 @@ VL_ATTR_COLD void Vtop___024root___eval_initial(Vtop___024root* vlSelf) {
     vlSelf->__Vclklast__TOP__rst = vlSelf->rst;
 }
 
-void Vtop___024root___combo__TOP__0(Vtop___024root* vlSelf);
-
 VL_ATTR_COLD void Vtop___024root___eval_settle(Vtop___024root* vlSelf) {
     if (false && vlSelf) {}  // Prevent unused
     Vtop__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___eval_settle\n"); );
     // Body
-    Vtop___024root___combo__TOP__0(vlSelf);
+    Vtop___024root___settle__TOP__0(vlSelf);
 }
 
 VL_ATTR_COLD void Vtop___024root___final(Vtop___024root* vlSelf) {
@@ -38,9 +48,9 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     // Body
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->rst = VL_RAND_RESET_I(1);
-    vlSelf->Pc = VL_RAND_RESET_I(32);
-    vlSelf->ImmOP = VL_RAND_RESET_I(32);
+    vlSelf->PCsrc = VL_RAND_RESET_I(1);
+    vlSelf->ImmOp = VL_RAND_RESET_I(32);
     vlSelf->a0 = VL_RAND_RESET_I(32);
-    vlSelf->top__DOT__PCsrc = VL_RAND_RESET_I(1);
-    vlSelf->top__DOT__PCReg__DOT__sreg = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__next_PC = VL_RAND_RESET_I(32);
+    vlSelf->top__DOT__PC = VL_RAND_RESET_I(32);
 }

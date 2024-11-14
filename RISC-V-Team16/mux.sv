@@ -2,21 +2,20 @@ module mux #(
     DATA_WIDTH = 32,
     OFFSET = 4
 ) (
-    input   logic [DATA_WIDTH-1:0]  Pc,
-    input   logic [DATA_WIDTH-1:0]  ImmOP,
+    input   logic [DATA_WIDTH-1:0]  PC,
+    input   logic [DATA_WIDTH-1:0]  ImmOp,
     input   logic                   PCsrc,
     output  logic [DATA_WIDTH-1:0]  next_PC
 );
     
-    logic [31:0] in0;
-
-    logic [31:0] in1;
+    logic [DATA_WIDTH-1:0] branch_PC;
+    logic [DATA_WIDTH-1:0] inc_PC;
 
     always_comb begin
-    in0 = Pc + OFFSET;
-    in1 = Pc + ImmOP;
+    branch_PC = PC + OFFSET;
+    inc_PC = PC + ImmOp;
     end
 
-    assign next_PC = PCsrc ? in1 : in0;
+    assign next_PC = PCsrc ? inc_PC : branch_PC;
 
 endmodule

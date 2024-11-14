@@ -15,13 +15,13 @@ class Vtop___024root final : public VerilatedModule {
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(rst,0,0);
-    CData/*0:0*/ top__DOT__PCsrc;
+    VL_IN8(PCsrc,0,0);
     CData/*0:0*/ __Vclklast__TOP__clk;
     CData/*0:0*/ __Vclklast__TOP__rst;
-    VL_IN(Pc,31,0);
-    VL_IN(ImmOP,31,0);
+    VL_IN(ImmOp,31,0);
     VL_OUT(a0,31,0);
-    IData/*31:0*/ top__DOT__PCReg__DOT__sreg;
+    IData/*31:0*/ top__DOT__next_PC;
+    IData/*31:0*/ top__DOT__PC;
 
     // INTERNAL VARIABLES
     Vtop__Syms* const vlSymsp;
