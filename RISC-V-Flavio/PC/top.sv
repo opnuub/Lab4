@@ -1,5 +1,6 @@
 module top #(
-    parameter DATA_WIDTH = 32
+    parameter DATA_WIDTH = 32,
+    parameter OFFSET = 4
 ) (
     input   logic                  clk,
     input   logic                  rst,
@@ -10,6 +11,8 @@ module top #(
 
     logic [DATA_WIDTH-1:0] next_PC;
     logic [DATA_WIDTH-1:0] PC;
+    logic [DATA_WIDTH-1:0] inc_PC;
+    logic [DATA_WIDTH-1:0] branch_PC;
 
     assign a0 = PC;
 
@@ -20,9 +23,14 @@ module top #(
         .next_PC (next_PC)     	
     );
 
+    always_comb begin
+    branch_PC = PC + OFFSET;
+    inc_PC = PC + ImmOp;
+    end
+
     mux mux (
-        .PC (PC),     
-        .ImmOp (ImmOp),      
+        .inc_PC (inc_PC),     
+        .branch_PC (branch_PC),      
         .PCsrc (PCsrc),       
         .next_PC (next_PC)     	
     );
