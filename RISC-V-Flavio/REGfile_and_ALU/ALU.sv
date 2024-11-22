@@ -18,6 +18,7 @@ always_comb begin
     sub = ALUop1 - ALUop2;
     andA = ALUop1 & ALUop2;
     orA = ALUop1 | ALUop2;
+    
 
     case (ALUctrl)
         0: ALUout = addi;
@@ -27,7 +28,6 @@ always_comb begin
         default: ALUout = '0;
     endcase
 
-    EQ = ALUctrl; // This seems unnecessary, but keep it if needed
 end
 
 
