@@ -1,3 +1,4 @@
+// module to sign extend the immediate value of the instruction
 module instr_mem #(
     parameter ADDR_WIDTH = 8,
     parameter INSTR_WIDTH = 32

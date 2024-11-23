@@ -2,7 +2,7 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "vbuddy.cpp"
-
+// #include "vbuddy.h"
 void printControlSignals(Vtop* top) {
     printf("Control Signals:\n");
     printf("- RegWrite: %d\n", top->reg_write);

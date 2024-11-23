@@ -1,4 +1,5 @@
 
+//module to sign extend the immediate value of the instruction
 module sign_extend (
     input  logic [31:0] instruction,  
     input  logic [6:0]  opcode,       
