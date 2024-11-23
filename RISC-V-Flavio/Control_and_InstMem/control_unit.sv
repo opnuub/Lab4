@@ -1,18 +1,15 @@
-/* verilator lint_off UNUSEDSIGNAL */
-/* verilator lint_off CASEINCOMPLETE */
 module control_unit (
-    input  logic [6:0] opcode,     // 指令操作码
-    input  logic [2:0] funct3,     // 功能码
-    output logic       reg_write,   // 寄存器写使能
-    output logic       alu_src,     // ALU输入选择
-    output logic       branch,      // 分支指令标志
-    output logic [2:0] alu_op      // ALU操作选择
+    input  logic [6:0] opcode,     
+    input  logic [2:0] funct3,     
+    output logic       reg_write,  
+    output logic       alu_src,     
+    output logic       branch,      
+    output logic [2:0] alu_op 
 );
-/* verilator lint_on UNUSEDSIGNAL */
-/* verilator lint_on CASEINCOMPLETE */
+
 
     always_comb begin
-        // 默认值设置
+
         reg_write = 1'b0;
         alu_src   = 1'b0;
         branch    = 1'b0;

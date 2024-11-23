@@ -1,13 +1,12 @@
-/* verilator lint_off UNUSEDSIGNAL */
+
 module sign_extend (
-    input  logic [31:0] instruction,  // 完整的指令
-    input  logic [6:0]  opcode,       // 操作码
-    output logic [31:0] imm_ext       // 扩展后的立即数
+    input  logic [31:0] instruction,  
+    input  logic [6:0]  opcode,       
+    output logic [31:0] imm_ext       
 );
-/* verilator lint_on UNUSEDSIGNAL */
 
     always_comb begin
-        imm_ext = 32'b0; // 默认值
+        imm_ext = 32'b0; 
 
         case(opcode)
             7'b0010011: begin // I-type (addi)
