@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/michaelli/Documents/GitHub/Lab4/RISC-V-Flavio/Control_and_InstMem",
+      "program": "/Users/michaelli/Documents/GitHub/Lab4/RISC-V-Flavio/Control_and_InstMem/build/Debug/outDebug"
+    }
+  ]
+}
