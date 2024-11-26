@@ -1,0 +1,43 @@
+
+a.out.reloc:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+EXEC_P, HAS_SYMS, D_PAGED
+start address 0xbfc00000
+
+
+Disassembly of section .text:
+
+bfc00000 <_start>:
+
+// entry point (0x0): compiler places earlier functions lower in memory.
+int main();
+
+void _start()
+{
+bfc00000:	ff010113          	addi	sp,sp,-16
+bfc00004:	00112623          	sw	ra,12(sp)
+bfc00008:	00812423          	sw	s0,8(sp)
+bfc0000c:	01010413          	addi	s0,sp,16
+    main();
+bfc00010:	008000ef          	jal	ra,bfc00018 <main>
+
+    // Infinite loop to prevent undefined access to memory
+    while (1)
+bfc00014:	0000006f          	j	bfc00014 <_start+0x14>
+
+bfc00018 <main>:
+}
+
+#endif
+
+int main()
+{
+bfc00018:	ff010113          	addi	sp,sp,-16
+bfc0001c:	00812623          	sw	s0,12(sp)
+bfc00020:	01010413          	addi	s0,sp,16
+    return 5;
+bfc00024:	00500793          	li	a5,5
+bfc00028:	00078513          	mv	a0,a5
+bfc0002c:	00c12403          	lw	s0,12(sp)
+bfc00030:	01010113          	addi	sp,sp,16
+bfc00034:	00008067          	ret

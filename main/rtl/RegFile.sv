@@ -19,6 +19,7 @@ module RegFile #(
     initial begin
         $display("Loading rom.1");
         $readmemh("/Users/michaelli/Documents/GitHub/Lab4/main/rtl/reg.mem", rom_array);
+        $display(rom_array);
     end
 
     // Write and Read Logic
