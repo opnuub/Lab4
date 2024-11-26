@@ -12,6 +12,6 @@ module instr_mem #(
     assign instr = rom[pc];
     
     initial begin
-        $readmemh("/home/kali/Lab4/main/rtl/program.hex", rom);
+        $readmemh("/home/fg723/Documents/iac/lab0-devtools/autumn/workspace/Lab4/main/rtl/program.hex", rom);
     end
 endmodule
