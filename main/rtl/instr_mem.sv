@@ -7,7 +7,7 @@ module instr_mem #(
     output logic [INSTR_WIDTH-1:0] instr
 );
 
-    logic [INSTR_WIDTH-1:0] rom [(2**ADDR_WIDTH)-1:0];
+    logic [INSTR_WIDTH-1:0] rom [(2**8)-1:0];
     
     assign instr = rom[pc];
     
