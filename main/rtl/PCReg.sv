@@ -7,9 +7,9 @@ module PCReg #(
     output  logic [DATA_WIDTH-1:0]  PC
 );
 
-    always_ff @ (posedge clk, posedge rst)
+    always_ff @ (posedge clk)
         if (rst)
-            PC <= 32'b0;
+            PC <= 0;
         else
             PC <= next_PC;
 

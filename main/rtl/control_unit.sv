@@ -5,17 +5,12 @@ module control_unit (
     output logic       reg_write,  
     output logic       alu_src,     
     output logic       branch,      
-    output logic [2:0] alu_op 
+    output logic [2:0] alu_op,
+    output logic       immSrc,
 );
 
-
+    assign immSrc = 1'b1;
     always_comb begin
-
-        reg_write = 1'b0;
-        alu_src   = 1'b0;
-        branch    = 1'b0;
-        alu_op    = 3'b000;
-
         case(opcode)
             7'b0010011: begin // I-type (addi)
                 reg_write = 1'b1;
