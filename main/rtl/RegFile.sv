@@ -18,7 +18,7 @@ module RegFile #(
     // Initialize rom_array in simulation only
     initial begin
         $display("Loading rom.1");
-        $readmemh("/home/fg723/Documents/iac/lab0-devtools/autumn/workspace/Lab4/main/rtl/reg.mem", rom_array);
+        $readmemh("/Users/michaelli/Documents/GitHub/Lab4/main/rtl/reg.mem", rom_array);
     end
 
     // Write and Read Logic

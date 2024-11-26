@@ -1,5 +1,5 @@
 module PCReg #(
-    DATA_WIDTH = 32
+    DATA_WIDTH = 12
 ) (
     input   logic [DATA_WIDTH-1:0]  next_PC,
     input   logic                   clk,

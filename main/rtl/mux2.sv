@@ -1,5 +1,5 @@
 module mux2 #(
-    parameter ADDR_WIDTH = 32
+    parameter ADDR_WIDTH = 12
 ) (
     input   logic [ADDR_WIDTH-1:0]  branch_PC,
     input   logic [ADDR_WIDTH-1:0]  inc_PC,

@@ -1,7 +1,7 @@
 module top #(
     parameter DATA_WIDTH = 32,
     parameter INSTR_WIDTH = 32,
-    parameter ADDR_WIDTH = 32,
+    parameter ADDR_WIDTH = 12,
     parameter REG_DATA_WIDTH = 5,
     parameter OFFSET = 4
 ) (
@@ -36,19 +36,21 @@ module top #(
     );
 
     sign_extend sign_ext (
-        .instruction (instr),
-        .immSrc (immSrc),
-        .imm_ext (immOp)
+        .instruction(instr),
+        .immSrc(immSrc),
+        .imm_ext(immOp)
     );
 
     control_unit ctrl_unit (
         .opcode (instr[6:0]),
         .funct3 (instr[14:12]),
         .reg_write (regWrite),
+        .eq (eq),
         .alu_src (aluSrc),
         .branch (pcSrc),
         .alu_op (aluCtrl),
-        .immSrc (immSrc)
+        .immSrc (immSrc),
+        .PCsrc(pcSrc)
     );
 
     RegFile #(

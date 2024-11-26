@@ -20,14 +20,14 @@ module control_unit (
         alu_op    = 3'b000;
 
         case (opcode)
-            7'b0010011: begin
+            7'b0010011: begin // I-type, addi instruction
                 reg_write = 1'b1;
                 alu_src   = 1'b1;
                 branch    = 1'b0;
                 alu_op    = 3'b000;
             end
             
-            7'b1100011: begin
+            7'b1100011: begin // B-type, bne instruction
                 reg_write = 1'b0;
                 alu_src   = 1'b0;
                 branch    = 1'b1;
