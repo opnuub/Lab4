@@ -12,7 +12,6 @@ module ALU #(
     logic [DATA_WIDTH-1:0] sub;
     logic [DATA_WIDTH-1:0] andA;
     logic [DATA_WIDTH-1:0] orA; 
-    logic [DATA_WIDTH-1:0] bne;
     logic                  match;
     
 always_comb begin
