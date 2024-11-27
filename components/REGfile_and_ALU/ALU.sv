@@ -13,18 +13,15 @@ module ALU #(
     logic [DATA_WIDTH-1:0] andA;
     logic [DATA_WIDTH-1:0] orA; 
     logic [DATA_WIDTH-1:0] bne;
-    logic                  match;
     
 always_comb begin
-    match = 0;
     addi = ALUop1 + ALUop2;
     sub = ALUop1 - ALUop2;
     andA = ALUop1 & ALUop2;
     orA = ALUop1 | ALUop2;
 
-    if(sub == 0 && ALUctrl == 4){
-        match = 1;
-    }
+    EQ = (sub == 0);
+
 
     case (ALUctrl)
         0: ALUout = addi;
@@ -34,8 +31,6 @@ always_comb begin
         4: ALUout = 0;
         default: ALUout = '0;
     endcase
-
-    EQ = match;
 
 end
 

@@ -3,7 +3,7 @@
 #include "Vtop.h"
 #include <iostream>
 
-#define MAX_SIM_CYC 20
+#define MAX_SIM_CYC 100
 
 int main(int argc, char **argv, char **env)
 {
@@ -50,6 +50,25 @@ int main(int argc, char **argv, char **env)
         if(simcyc == 10){
             top->ALUctrl = 1;
         }
+
+        if(simcyc == 12){
+            top->ALUctrl = 2;
+        }
+
+        if(simcyc == 14){
+            top->ALUctrl = 3;
+        }
+
+        if(simcyc == 16){
+            top->ALUsrc = 1;
+        }
+
+        if(simcyc == 18){
+            top->ImmOp = 1;
+            top->ALUctrl = 1;
+        }
+
+
 
 
         // Print the current PC value on every cycle
