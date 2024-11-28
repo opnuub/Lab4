@@ -1,0 +1,3 @@
+00000293 // addi x5, x0, 0       # initialize x5 to 0
+00128313 // addi x6, x5, 1       # x6 = x5 + 1
+fe6298e3 // bne  x5, x6, -16     # if x5!=x6 jump back, test cases 
