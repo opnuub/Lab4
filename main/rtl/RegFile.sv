@@ -13,13 +13,11 @@ module RegFile #(
     output  logic [DATA_WIDTH-1:0]      regOp2
 );
 
-    logic [DATA_WIDTH-1:0] rom_array [2**REG_DATA_WIDTH-1:0];
+    logic [DATA_WIDTH-1:0] rom_array [(2**REG_DATA_WIDTH)-1:0];
 
     // Initialize rom_array in simulation only
     initial begin
-        $display("Loading rom.1");
-        $readmemh("/Users/michaelli/Documents/GitHub/Lab4/main/rtl/reg.mem", rom_array);
-        $display(rom_array);
+        $readmemh("/home/kali/Lab4/main/rtl/reg.mem", rom_array);
     end
 
     // Write and Read Logic
