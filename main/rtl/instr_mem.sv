@@ -11,6 +11,6 @@ module instr_mem #(
     assign instr = rom[pc]; // Use only the 8 LSBs of the PC
 
     initial begin
-        $readmemh("/home/kali/Lab4/main/rtl/program.hex", rom);
+        $readmemh("../rtl/program.hex", rom);
     end
 endmodule

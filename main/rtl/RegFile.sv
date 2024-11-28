@@ -17,7 +17,7 @@ module RegFile #(
 
     // Initialize rom_array in simulation only
     initial begin
-        $readmemh("/home/kali/Lab4/main/rtl/reg.mem", rom_array);
+        $readmemh("../rtl/reg.mem", rom_array);
     end
 
     // Write and Read Logic
