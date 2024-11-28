@@ -3,7 +3,7 @@ module top #(
     parameter INSTR_WIDTH = 32,
     parameter ADDR_WIDTH = 16,
     parameter REG_DATA_WIDTH = 5,
-    parameter OFFSET = 4
+    parameter OFFSET = 1
 ) (
     input   logic                   clk,
     input   logic                   rst,
