@@ -10,14 +10,13 @@ module control_unit (
     output logic       PCsrc
 );
 
-    assign immSrc = 1'b1;
-
     always_comb begin
         reg_write = 1'b0;
         alu_src   = 1'b0;
         branch    = 1'b0;
         PCsrc     = 1'b0;
         alu_op    = 3'b000;
+        immSrc    = 1'b0;
 
         case (opcode)
             7'b0010011: begin // I-type, addi instruction
@@ -25,6 +24,7 @@ module control_unit (
                 alu_src   = 1'b1;
                 branch    = 1'b0;
                 alu_op    = 3'b000;
+                immSrc    = 1'b0;
             end
             
             7'b1100011: begin // B-type, bne instruction
@@ -32,6 +32,7 @@ module control_unit (
                 alu_src   = 1'b0;
                 branch    = 1'b1;
                 alu_op    = 3'b001;
+                immSrc    = 1'b1;
 
                 case (funct3)
                     3'b001: PCsrc = ~eq;
@@ -46,6 +47,7 @@ module control_unit (
                 branch    = 1'b0;
                 PCsrc     = 1'b0;
                 alu_op    = 3'b000;
+                immSrc    = 1'b0;
             end
         endcase
     end
