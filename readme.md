@@ -15,7 +15,7 @@ This repository contains Group 16's work for Lab 4, focused on creating a simpli
 |-----------------------|------------------------|-----------------------------|------------------|--------------------------|  
 | **Program Counter ()**   |               |         <center>S              |                  |                          |  
 | **ALU (ALU.sv)**               |    |    <center>S  | |          <center>M     |  
-| **Register File**     |                        |                             |                 |                          |  
+| **Register File**     |                        | <center> S                             |                 |                          |  
 | **Instruction Memory**|          <center>S                  |                             |                  |                         |  
 | **Control Unit**      |                        |                             |                  |                         |  
 | **Sign Extend**       |                        |                             |                  |                         |  
