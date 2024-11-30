@@ -1,9 +1,9 @@
 module top #(
     parameter DATA_WIDTH = 32,
     parameter INSTR_WIDTH = 32,
-    parameter ADDR_WIDTH = 12,
+    parameter ADDR_WIDTH = 16,
     parameter REG_DATA_WIDTH = 5,
-    parameter OFFSET = 4
+    parameter OFFSET = 1
 ) (
     input   logic                   clk,
     input   logic                   rst,
@@ -98,8 +98,8 @@ module top #(
     );
 
     always_comb begin
-        branchPC = pc + OFFSET;
-        incPC = pc + immOp;
+        incPC = pc + OFFSET;
+        branchPC = pc + immOp[15:0];
     end
 
 endmodule

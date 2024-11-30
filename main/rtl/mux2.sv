@@ -1,5 +1,5 @@
 module mux2 #(
-    parameter ADDR_WIDTH = 12
+    parameter ADDR_WIDTH = 16
 ) (
     input   logic [ADDR_WIDTH-1:0]  branch_PC,
     input   logic [ADDR_WIDTH-1:0]  inc_PC,
@@ -8,6 +8,6 @@ module mux2 #(
 );
 
 
-    assign next_PC = PCsrc ? inc_PC : branch_PC;
+    assign next_PC = PCsrc ? branch_PC : inc_PC;
 
 endmodule
