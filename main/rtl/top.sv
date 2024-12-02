@@ -86,7 +86,10 @@ module top #(
     PCReg PCReg (
         .clk (clk),
         .rst (rst),
-        .PC (pc),
+        .pc (pc),
+        .incPC (incPC),
+        .branchPC (branchPC),
+        .immOp (immOp),
         .next_PC (nextPC)
     );
 
@@ -97,9 +100,5 @@ module top #(
         .next_PC (nextPC)
     );
 
-    always_comb begin
-        incPC = pc + OFFSET;
-        branchPC = pc + immOp[15:0];
-    end
 
 endmodule
